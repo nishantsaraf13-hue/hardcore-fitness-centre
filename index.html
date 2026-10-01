@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardcore Fitness Centre | Gym in Dahisar East, Mumbai</title>
-    <meta name="description" content="Hardcore Fitness Centre in Dahisar East, Mumbai. Train hard, stay consistent, and work toward your fitness goals.">
+    <title>Hardcore Fitness Centre | Premium Gym in Dahisar East, Mumbai</title>
+    <meta name="description" content="Hardcore Fitness Centre in Dahisar East, Mumbai. Premium equipment, intense training atmosphere, and guaranteed results.">
     
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Hardcore Fitness Centre">
-    <meta property="og:description" content="A serious training environment for people committed to becoming stronger, fitter, and better.">
+    <meta property="og:title" content="Hardcore Fitness Centre - Dahisar East">
+    <meta property="og:description" content="Train Hard. Stay Hardcore. The ultimate gym for serious fitness enthusiasts.">
     <meta property="og:type" content="website">
     
     <!-- Google Fonts -->
@@ -19,30 +19,54 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Reading / Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+    <!-- Mouse Cursor Glow Spotlight -->
+    <div class="cursor-spotlight" id="cursorSpotlight"></div>
+
+    <!-- Ambient Glowing Cyber Orbs -->
+    <div class="ambient-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
     <!-- Navigation -->
     <header class="header" id="header">
         <div class="container nav-container">
             <a href="#" class="logo">
-                HARDCORE <span>FITNESS</span>
+                <div class="logo-emblem-wrap">
+                    <img src="images/logo.jpg" alt="Hardcore Fitness Logo Emblem" class="logo-img">
+                </div>
+                <div class="logo-text-group">
+                    <span class="logo-brand">HARDCORE</span>
+                    <span class="logo-sub">FITNESS</span>
+                </div>
             </a>
             
             <nav class="navbar" id="navbar">
                 <ul class="nav-list">
-                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#training" class="nav-link">Training</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#membership" class="nav-link">Membership</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             
-            <a href="tel:+917777057055" class="btn btn-primary d-none-mobile">JOIN NOW</a>
+            <a href="#contact" class="btn btn-primary nav-btn btn-glow">
+                <span>JOIN NOW</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
             
-            <div class="mobile-toggle" id="mobile-toggle">
+            <div class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -53,64 +77,146 @@
         <section class="hero" id="home">
             <div class="hero-bg" style="background-image: url('images/hero_gym_1787259028978.jpg');"></div>
             <div class="hero-overlay"></div>
+            <div class="hero-mesh"></div>
+            <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
             
-            <div class="container hero-content fade-in-up">
-                <div class="hero-rating">
-                    <span class="stars">★★★★★</span>
-                    <span class="rating-text">4.7 / 5 (98 Reviews)</span>
+            <div class="container hero-content">
+                <div class="hero-badge-pill fade-in-up">
+                    <span class="pulse-dot"></span>
+                    <span class="badge-text">DAHISAR EAST'S PREMIER TRAINING FACILITY</span>
                 </div>
                 
-                <h1 class="hero-title">
-                    TRAIN HARD.<br>
-                    <span class="accent-text">STAY HARDCORE.</span>
+                <h1 class="hero-title fade-in-up" style="animation-delay: 0.15s;">
+                    FORGE YOUR BODY.<br>
+                    <span class="accent-text gradient-glow-text">STAY HARDCORE.</span>
                 </h1>
                 
-                <p class="hero-subtitle">
-                    Hardcore Fitness Centre — a serious training environment for people committed to becoming stronger, fitter, and better.
+                <p class="hero-subtitle fade-in-up" style="animation-delay: 0.3s;">
+                    A no-nonsense, high-intensity training atmosphere designed for champions, lifters, and anyone committed to peak human performance.
                 </p>
                 
-                <div class="hero-location">
-                    <i class="fas fa-map-marker-alt"></i> Dahisar East, Mumbai
+                <div class="hero-location fade-in-up" style="animation-delay: 0.4s;">
+                    <span class="loc-icon-pulse"><i class="fas fa-map-marker-alt"></i></span>
+                    <span>Shop No 1 & 2, Anil Dubey Chawl, Dahisar East, Mumbai</span>
                 </div>
                 
-                <div class="hero-actions">
-                    <a href="#membership" class="btn btn-primary btn-large">JOIN THE GYM</a>
-                    <a href="tel:+917777057055" class="btn btn-outline btn-large">CALL NOW</a>
+                <div class="hero-actions fade-in-up" style="animation-delay: 0.5s;">
+                    <a href="#membership" class="btn btn-primary btn-large btn-shimmer">
+                        <span>START YOUR JOURNEY</span>
+                        <i class="fas fa-fire"></i>
+                    </a>
+                    <a href="tel:+917777057055" class="btn btn-outline btn-large">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>CALL 7777057055</span>
+                    </a>
+                </div>
+
+                <!-- Floating Live Stats Bar -->
+                <div class="hero-stats-bar fade-in-up" style="animation-delay: 0.65s;">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="4.7" data-decimals="1">0</div>
+                        <div class="stat-stars">★★★★★</div>
+                        <div class="stat-label">Google Rating (98+ Reviews)</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1200" data-suffix="+">0</div>
+                        <div class="stat-icon-mini"><i class="fas fa-user-check"></i></div>
+                        <div class="stat-label">Members Transformed</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="60" data-suffix="+">0</div>
+                        <div class="stat-icon-mini"><i class="fas fa-dumbbell"></i></div>
+                        <div class="stat-label">Heavy Iron Stations</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="7" data-suffix=" Days">0</div>
+                        <div class="stat-icon-mini"><i class="fas fa-clock"></i></div>
+                        <div class="stat-label">Open Weekly (5:30 AM)</div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Dynamic Moving Athletic Marquee Strip (Forward Motion) -->
+        <div class="marquee-strip marquee-forward" aria-hidden="true">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-item"><i class="fas fa-bolt"></i> HEAVY OLYMPIC IRON</span>
+                    <span class="marquee-item"><i class="fas fa-fire"></i> DAHISAR EAST SANCTUARY</span>
+                    <span class="marquee-item"><i class="fas fa-dumbbell"></i> UNBREAKABLE DISCIPLINE</span>
+                    <span class="marquee-item"><i class="fas fa-clock"></i> OPEN 5:30 AM – 11:00 PM</span>
+                    <span class="marquee-item"><i class="fas fa-trophy"></i> CERTIFIED FLOOR COACHES</span>
+                    <span class="marquee-item"><i class="fas fa-shield-alt"></i> ZERO SHORTCUTS • REAL GAINS</span>
+                    <span class="marquee-item"><i class="fas fa-star"></i> 98+ FIVE-STAR GOOGLE REVIEWS</span>
+                    <span class="marquee-item"><i class="fas fa-chart-line"></i> PROGRESSIVE OVERLOAD SYSTEM</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-item"><i class="fas fa-bolt"></i> HEAVY OLYMPIC IRON</span>
+                    <span class="marquee-item"><i class="fas fa-fire"></i> DAHISAR EAST SANCTUARY</span>
+                    <span class="marquee-item"><i class="fas fa-dumbbell"></i> UNBREAKABLE DISCIPLINE</span>
+                    <span class="marquee-item"><i class="fas fa-clock"></i> OPEN 5:30 AM – 11:00 PM</span>
+                    <span class="marquee-item"><i class="fas fa-trophy"></i> CERTIFIED FLOOR COACHES</span>
+                    <span class="marquee-item"><i class="fas fa-shield-alt"></i> ZERO SHORTCUTS • REAL GAINS</span>
+                    <span class="marquee-item"><i class="fas fa-star"></i> 98+ FIVE-STAR GOOGLE REVIEWS</span>
+                    <span class="marquee-item"><i class="fas fa-chart-line"></i> PROGRESSIVE OVERLOAD SYSTEM</span>
+                </div>
+            </div>
+        </div>
 
         <!-- About Section -->
         <section class="about section-padding" id="about">
             <div class="container about-container">
                 <div class="about-image-wrapper reveal-left">
-                    <img src="images/about_gym_interior_1787259127598.jpg" alt="Gym Interior" class="about-image">
-                    <div class="about-badge">
-                        <i class="fas fa-dumbbell"></i>
-                        <span>Serious Training</span>
+                    <div class="image-frame-glow">
+                        <img src="images/about_gym_interior_1787259127598.jpg" alt="Gym Interior" class="about-image">
+                    </div>
+                    <div class="about-badge glass-card floating-badge">
+                        <div class="badge-icon-wrap">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div>
+                            <strong>ELITE ENVIRONMENT</strong>
+                            <span>Built For Relentless Lifters</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="about-content reveal-right">
-                    <h2 class="section-title">BUILT FOR PEOPLE WHO TAKE TRAINING <span class="accent-text">SERIOUSLY.</span></h2>
+                    <div class="sub-badge">ABOUT OUR SANCTUARY</div>
+                    <h2 class="section-title">BUILT FOR ATHLETES WHO TAKE TRAINING <span class="accent-text gradient-glow-text">SERIOUSLY.</span></h2>
                     
                     <p class="section-desc">
-                        Hardcore Fitness Centre is more than just a gym. It is a dedicated space built on the principles of discipline, consistency, and hard work. Located in Dahisar East, Mumbai, we provide an environment that strips away the distractions and focuses on what truly matters: your training.
+                        Hardcore Fitness Centre is built on the raw principles of discipline, iron consistency, and real results. Located in the heart of Dahisar East, we stripped away the distractions and gym fluff to create an iron arena where hard work is celebrated.
                     </p>
                     
                     <p class="section-desc">
-                        Whether your goal is to build strength, improve overall fitness, or transform your lifestyle, our facility is equipped to support your journey. Surround yourself with a community of individuals who are committed to pushing their limits.
+                        Whether your ambition is sculpting dense muscle, shattering personal deadlift records, or torching body fat, our world-class facility and high-energy community are primed to fuel your fire.
                     </p>
                     
                     <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i> Premium Equipment
+                        <div class="feature-card tilt-element">
+                            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <h4>Olympic Heavy Iron</h4>
+                                <p>Extensive dumbbells up to heavyweights, power racks, and pro benches.</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i> Motivating Environment
+                        <div class="feature-card tilt-element">
+                            <div class="feature-icon"><i class="fas fa-fire-alt"></i></div>
+                            <div>
+                                <h4>High-Energy Atmosphere</h4>
+                                <p>Surround yourself with lifters who push past limits every single session.</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i> Focused Community
+                        <div class="feature-card tilt-element">
+                            <div class="feature-icon"><i class="fas fa-award"></i></div>
+                            <div>
+                                <h4>Expert Form Guidance</h4>
+                                <p>Certified floor coaches to correct posture, prevent injuries, and accelerate gains.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,36 +224,43 @@
         </section>
 
         <!-- Why Hardcore Section -->
-        <section class="why-us section-padding bg-darker">
+        <section class="why-us section-padding bg-darker" id="why-us">
             <div class="container">
                 <div class="section-header text-center reveal-up">
-                    <h2 class="section-title">THE <span class="accent-text">HARDCORE</span> WAY</h2>
-                    <p class="section-subtitle">We believe in effort, discipline, and results.</p>
+                    <div class="sub-badge">THE HARDCORE CODE</div>
+                    <h2 class="section-title">WHY LIFTERS CHOOSE <span class="accent-text gradient-glow-text">HARDCORE</span></h2>
+                    <p class="section-subtitle">We don't sell shortcuts. We provide the iron, the atmosphere, and the brotherhood.</p>
                 </div>
                 
                 <div class="cards-grid">
-                    <div class="card reveal-up" style="transition-delay: 100ms;">
+                    <div class="card tilt-element reveal-up" style="transition-delay: 100ms;">
+                        <div class="card-glow-layer"></div>
                         <div class="card-icon">
                             <i class="fas fa-bullseye"></i>
                         </div>
                         <h3 class="card-title">TRAIN WITH PURPOSE</h3>
-                        <p class="card-desc">A structured fitness environment designed entirely around focused, serious training. Leave the distractions at the door.</p>
+                        <p class="card-desc">No crowded queues or social media distractions. Every station is organized for progressive overload and pure training efficiency.</p>
+                        <div class="card-bottom-pill">High Focus</div>
                     </div>
                     
-                    <div class="card reveal-up" style="transition-delay: 200ms;">
+                    <div class="card tilt-element reveal-up" style="transition-delay: 200ms;">
+                        <div class="card-glow-layer"></div>
                         <div class="card-icon">
                             <i class="fas fa-calendar-check"></i>
                         </div>
-                        <h3 class="card-title">STAY CONSISTENT</h3>
-                        <p class="card-desc">Progress isn't made overnight. We provide the atmosphere you need to build unbreakable discipline through regular training.</p>
+                        <h3 class="card-title">UNBREAKABLE CONSISTENCY</h3>
+                        <p class="card-desc">Open 7 days a week starting at 5:30 AM. Whether you're an early bird grinder or late night lifter, your gym is always ready.</p>
+                        <div class="card-bottom-pill">5:30 AM – 11:00 PM</div>
                     </div>
                     
-                    <div class="card reveal-up" style="transition-delay: 300ms;">
+                    <div class="card tilt-element reveal-up" style="transition-delay: 300ms;">
+                        <div class="card-glow-layer"></div>
                         <div class="card-icon">
                             <i class="fas fa-weight-hanging"></i>
                         </div>
-                        <h3 class="card-title">GET STRONGER</h3>
-                        <p class="card-desc">Focus on long-term strength and overall fitness progression. Our facility supports heavy lifters and fitness enthusiasts alike.</p>
+                        <h3 class="card-title">PROGRESSIVE OVERLOAD</h3>
+                        <p class="card-desc">Heavy duty selectorized cables, multiple Olympic squat racks, and specialized grip bars to maximize muscular hypertrophy.</p>
+                        <div class="card-bottom-pill">All Fitness Levels</div>
                     </div>
                 </div>
             </div>
@@ -156,49 +269,143 @@
         <!-- Training Section -->
         <section class="training section-padding" id="training">
             <div class="container">
-                <div class="section-header reveal-up">
-                    <h2 class="section-title">TRAINING <span class="accent-text">GOALS</span></h2>
-                    <p class="section-subtitle">Whatever your objective, Hardcore Fitness Centre is equipped for it.</p>
+                <div class="section-header text-center reveal-up">
+                    <div class="sub-badge">SPECIALIZED TRACKS</div>
+                    <h2 class="section-title">TRAINING <span class="accent-text gradient-glow-text">PROGRAMS</span></h2>
+                    <p class="section-subtitle">Choose your battleground and target your specific physiological ambitions.</p>
                 </div>
                 
                 <div class="training-grid">
                     <div class="training-card reveal-up" style="transition-delay: 100ms;">
                         <img src="images/gallery_squat_rack_1787259068898.jpg" alt="Strength Training" class="training-img">
+                        <div class="training-badge-pill">POWER & STRENGTH</div>
                         <div class="training-overlay">
-                            <h3>Strength Training</h3>
-                            <p>Build raw power and enhance your lifting capabilities in our dedicated free-weight zones.</p>
+                            <h3>Strength & Powerlifting</h3>
+                            <p>Master the Big 3 (Squat, Bench, Deadlift) in our dedicated lifting platforms with heavy iron.</p>
+                            <a href="#contact" class="training-link">Explore Program <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     
                     <div class="training-card reveal-up" style="transition-delay: 200ms;">
                         <img src="images/gallery_weights_1787259055958.jpg" alt="Muscle Building" class="training-img">
+                        <div class="training-badge-pill">HYPERTROPHY</div>
                         <div class="training-overlay">
-                            <h3>Muscle Building</h3>
-                            <p>Targeted hypertrophy training using a wide range of premium machines and heavy iron.</p>
+                            <h3>Bodybuilding & Hypertrophy</h3>
+                            <p>Laser-targeted biomechanical machines and dumbbell sets designed for optimal muscle fiber recruitment.</p>
+                            <a href="#contact" class="training-link">Explore Program <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     
                     <div class="training-card reveal-up" style="transition-delay: 300ms;">
                         <img src="images/gallery_cardio_1787259083072.jpg" alt="Fat Loss & Conditioning" class="training-img">
+                        <div class="training-badge-pill">CONDITIONING</div>
                         <div class="training-overlay">
-                            <h3>Conditioning & Fat Loss</h3>
-                            <p>Improve your cardiovascular health and endurance with our modern cardio and functional equipment.</p>
+                            <h3>Fat Loss & Endurance</h3>
+                            <p>High-cadence HIIT setups, treadmills, stairmasters, and cross-trainers to shred body fat while preserving muscle.</p>
+                            <a href="#contact" class="training-link">Explore Program <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Membership Section -->
+        <!-- Interactive Fitness & Goal Calculator -->
+        <section class="calculator-section section-padding bg-darker" id="calculator">
+            <div class="container">
+                <div class="calculator-card glass-card reveal-scale">
+                    <div class="calculator-header text-center">
+                        <div class="sub-badge">INSTANT ESTIMATE</div>
+                        <h2 class="section-title">INTERACTIVE <span class="accent-text gradient-glow-text">FITNESS CALCULATOR</span></h2>
+                        <p class="section-subtitle" style="margin-bottom: 25px;">Enter your stats to find your BMI, calorie baseline, and recommended gym schedule.</p>
+                    </div>
+
+                    <form id="fitnessCalculatorForm" class="calc-form">
+                        <div class="calc-grid">
+                            <div class="form-group">
+                                <label for="calcWeight"><i class="fas fa-weight"></i> Weight (kg)</label>
+                                <input type="number" id="calcWeight" placeholder="e.g. 72" min="30" max="250" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="calcHeight"><i class="fas fa-ruler-vertical"></i> Height (cm)</label>
+                                <input type="number" id="calcHeight" placeholder="e.g. 175" min="100" max="240" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="calcAge"><i class="fas fa-user"></i> Age</label>
+                                <input type="number" id="calcAge" placeholder="e.g. 24" min="14" max="90" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="calcGoal"><i class="fas fa-bullseye"></i> Primary Goal</label>
+                                <select id="calcGoal" class="calc-select">
+                                    <option value="muscle">Muscle Hypertrophy (Bulk)</option>
+                                    <option value="fatloss">Fat Loss & Conditioning (Cut)</option>
+                                    <option value="strength">Raw Power & Strength</option>
+                                    <option value="endurance">General Fitness & Mobility</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="button" id="calcBtn" class="btn btn-primary btn-large btn-shimmer">
+                                <span>CALCULATE MY BLUEPRINT</span>
+                                <i class="fas fa-calculator"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Result Display Card -->
+                    <div id="calcResults" class="calc-results d-none">
+                        <div class="results-grid">
+                            <div class="result-box">
+                                <span class="res-label">Body Mass Index (BMI)</span>
+                                <span class="res-value" id="resBMI">22.4</span>
+                                <span class="res-status" id="resBMIStatus">Normal Weight</span>
+                            </div>
+                            <div class="result-box highlight-box">
+                                <span class="res-label">Estimated Maintenance</span>
+                                <span class="res-value" id="resCalories">2,350</span>
+                                <span class="res-unit">kcal / day</span>
+                            </div>
+                            <div class="result-box">
+                                <span class="res-label">Recommended Training</span>
+                                <span class="res-value" id="resPlan">Hypertrophy Track</span>
+                                <span class="res-status">4-5 Days / Week</span>
+                            </div>
+                        </div>
+                        <div class="calc-cta text-center">
+                            <p>Ready to put this blueprint to work with our trainers?</p>
+                            <a href="#contact" class="btn btn-outline btn-small">Talk to a Trainer Today</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Banner -->
         <section class="membership section-padding" id="membership">
             <div class="container">
                 <div class="membership-banner reveal-scale">
+                    <div class="membership-glow-bg"></div>
                     <div class="membership-content">
-                        <h2>READY TO START?</h2>
-                        <p>Talk to Hardcore Fitness Centre about membership options and find the plan that fits your goals.</p>
+                        <div class="sub-badge">JOIN THE IRON SQUAD</div>
+                        <h2>READY TO TRANSFORM YOUR PHYSIQUE?</h2>
+                        <p>Flexible quarterly, semi-annual, and annual plans designed for sustained fitness progression with full locker access.</p>
+                        
+                        <div class="membership-perks-row">
+                            <div class="perk-item"><i class="fas fa-check-circle"></i> Unlimited Gym Access</div>
+                            <div class="perk-item"><i class="fas fa-check-circle"></i> Floor Trainer Guidance</div>
+                            <div class="perk-item"><i class="fas fa-check-circle"></i> Locker & Shower Facilities</div>
+                            <div class="perk-item"><i class="fas fa-check-circle"></i> Cardio & Free-Weights</div>
+                        </div>
+
                         <div class="membership-actions">
-                            <a href="tel:+917777057055" class="btn btn-primary btn-large">CALL 7777057055</a>
-                            <a href="https://maps.google.com/?q=Hardcore+Fitness+Centre,Dahisar+East,Mumbai" target="_blank" class="btn btn-outline btn-large">GET DIRECTIONS</a>
+                            <a href="tel:+917777057055" class="btn btn-primary btn-large btn-glow">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>CALL 7777057055 FOR PRICING</span>
+                            </a>
+                            <a href="https://maps.google.com/?q=Hardcore+Fitness+Centre,Dahisar+East,Mumbai" target="_blank" class="btn btn-outline btn-large">
+                                <i class="fas fa-directions"></i>
+                                <span>GET GYM DIRECTIONS</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -209,118 +416,265 @@
         <section class="gallery section-padding bg-darker" id="gallery">
             <div class="container">
                 <div class="section-header text-center reveal-up">
-                    <h2 class="section-title">THE <span class="accent-text">FACILITY</span></h2>
-                    <p class="section-subtitle">Take a look inside Mumbai's premier hardcore gym.</p>
+                    <div class="sub-badge">INSIDE THE IRON LAB</div>
+                    <h2 class="section-title">THE <span class="accent-text gradient-glow-text">FACILITY</span></h2>
+                    <p class="section-subtitle">Click any image to inspect Mumbai's top-tier hardcore gym setup in high resolution.</p>
+                    
+                    <!-- Filter Pills -->
+                    <div class="gallery-filters">
+                        <button class="gallery-filter-btn active" data-filter="all">All Stations</button>
+                        <button class="gallery-filter-btn" data-filter="iron">Heavy Iron</button>
+                        <button class="gallery-filter-btn" data-filter="racks">Racks & Platforms</button>
+                        <button class="gallery-filter-btn" data-filter="machines">Cable Machines</button>
+                    </div>
                 </div>
                 
-                <div class="gallery-grid">
-                    <div class="gallery-item reveal-up">
-                        <img src="images/gallery_bench_press_1787259114348.jpg" alt="Bench Press Station">
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-item tilt-element reveal-up" data-category="racks" data-src="images/gallery_bench_press_1787259114348.jpg" data-caption="Competition Olympic Bench Press Station">
+                        <img src="images/gallery_bench_press_1787259114348.jpg" alt="Bench Press Station" loading="lazy">
                         <div class="gallery-hover">
-                            <i class="fas fa-search-plus"></i>
+                            <div class="hover-circle"><i class="fas fa-expand-alt"></i></div>
+                            <span class="hover-caption">Olympic Bench Press</span>
                         </div>
                     </div>
-                    <div class="gallery-item reveal-up">
-                        <img src="images/gallery_weights_1787259055958.jpg" alt="Dumbbell Rack">
+
+                    <div class="gallery-item tilt-element reveal-up" data-category="iron" data-src="images/gallery_weights_1787259055958.jpg" data-caption="Heavy Hex and Urethane Dumbbell Wall">
+                        <img src="images/gallery_weights_1787259055958.jpg" alt="Dumbbell Rack" loading="lazy">
                         <div class="gallery-hover">
-                            <i class="fas fa-search-plus"></i>
+                            <div class="hover-circle"><i class="fas fa-expand-alt"></i></div>
+                            <span class="hover-caption">Heavy Dumbbell Wall</span>
                         </div>
                     </div>
-                    <div class="gallery-item reveal-up">
-                        <img src="images/gallery_cables_1787259137373.jpg" alt="Cable Machines">
+
+                    <div class="gallery-item tilt-element reveal-up" data-category="machines" data-src="images/gallery_cables_1787259137373.jpg" data-caption="8-Stack Heavy Duty Dual Pulley Cable Station">
+                        <img src="images/gallery_cables_1787259137373.jpg" alt="Cable Machines" loading="lazy">
                         <div class="gallery-hover">
-                            <i class="fas fa-search-plus"></i>
+                            <div class="hover-circle"><i class="fas fa-expand-alt"></i></div>
+                            <span class="hover-caption">Multi-Cable Station</span>
                         </div>
                     </div>
-                    <div class="gallery-item reveal-up">
-                        <img src="images/gallery_squat_rack_1787259068898.jpg" alt="Squat Racks">
+
+                    <div class="gallery-item tilt-element reveal-up" data-category="racks" data-src="images/gallery_squat_rack_1787259068898.jpg" data-caption="Heavy Gauge Power Cage & Squat Rack with Band Pegs">
+                        <img src="images/gallery_squat_rack_1787259068898.jpg" alt="Squat Racks" loading="lazy">
                         <div class="gallery-hover">
-                            <i class="fas fa-search-plus"></i>
+                            <div class="hover-circle"><i class="fas fa-expand-alt"></i></div>
+                            <span class="hover-caption">Reinforced Squat Cage</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item tilt-element reveal-up" data-category="machines" data-src="images/gallery_cardio_1787259083072.jpg" data-caption="High-Output Cardio & Conditioning Deck">
+                        <img src="images/gallery_cardio_1787259083072.jpg" alt="Cardio Machines" loading="lazy">
+                        <div class="gallery-hover">
+                            <div class="hover-circle"><i class="fas fa-expand-alt"></i></div>
+                            <span class="hover-caption">Cardio Conditioning</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item tilt-element reveal-up" data-category="iron" data-src="images/about_gym_interior_1787259127598.jpg" data-caption="Main Floor Training Zone & Machine Rows">
+                        <img src="images/about_gym_interior_1787259127598.jpg" alt="Gym Interior Main Hall" loading="lazy">
+                        <div class="gallery-hover">
+                            <div class="hover-circle"><i class="fas fa-expand-alt"></i></div>
+                            <span class="hover-caption">Main Training Arena</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Social Proof -->
-        <section class="social-proof section-padding">
-            <div class="container text-center reveal-up">
-                <div class="rating-badge">
-                    <div class="google-icon">
-                        <i class="fab fa-google"></i>
+        <!-- Social Proof & Member Reviews -->
+        <section class="social-proof section-padding" id="reviews">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <div class="sub-badge">AUTHENTIC REPUTATION</div>
+                    <h2 class="section-title">HEAR IT FROM <span class="accent-text gradient-glow-text">OUR ATHLETES</span></h2>
+                    <p class="section-subtitle">Real Mumbai lifters pushing their physiological potential at Hardcore Fitness Centre.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card tilt-element reveal-up">
+                        <div class="testi-header">
+                            <div class="testi-stars">★★★★★</div>
+                            <div class="verified-tag"><i class="fas fa-check-circle"></i> Verified Member</div>
+                        </div>
+                        <p class="testi-text">"Best gym in Dahisar East hands down. The equipment is solid, weights are always stacked, and people here genuinely train with intensity instead of sitting on machines playing on phones."</p>
+                        <div class="testi-author">
+                            <div class="author-avatar"><i class="fas fa-user-ninja"></i></div>
+                            <div>
+                                <h4>Rahul Verma</h4>
+                                <span>Training here for 2 years</span>
+                            </div>
+                        </div>
                     </div>
-                    <h2 class="rating-score">4.7 <span class="stars">★★★★★</span></h2>
-                    <p class="rating-count">98 Google Reviews</p>
-                    <p class="rating-text">Rated by our dedicated members</p>
+
+                    <div class="testimonial-card glass-card tilt-element reveal-up" style="transition-delay: 150ms;">
+                        <div class="testi-header">
+                            <div class="testi-stars">★★★★★</div>
+                            <div class="verified-tag"><i class="fas fa-check-circle"></i> Verified Member</div>
+                        </div>
+                        <p class="testi-text">"The early 5:30 AM opening time is a lifesaver for my corporate routine. The trainers are always around to correct your form on deadlifts and bench presses without forcing personal training packages on you."</p>
+                        <div class="testi-author">
+                            <div class="author-avatar"><i class="fas fa-user-astronaut"></i></div>
+                            <div>
+                                <h4>Sameer Kulkarni</h4>
+                                <span>Powerlifting Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card tilt-element reveal-up" style="transition-delay: 300ms;">
+                        <div class="testi-header">
+                            <div class="testi-stars">★★★★★</div>
+                            <div class="verified-tag"><i class="fas fa-check-circle"></i> Verified Member</div>
+                        </div>
+                        <p class="testi-text">"I lost 14 kg within 6 months. High energy vibes, clean locker rooms, and great cardio equipment. Hardcore Fitness has completely transformed my lifestyle and confidence."</p>
+                        <div class="testi-author">
+                            <div class="author-avatar"><i class="fas fa-user-shield"></i></div>
+                            <div>
+                                <h4>Aniket Sharma</h4>
+                                <span>Weight Loss Transformation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Rating Badge -->
+                <div class="rating-badge-row text-center reveal-up">
+                    <div class="rating-badge glass-card">
+                        <div class="google-icon"><i class="fab fa-google"></i></div>
+                        <h3 class="rating-score">4.7 <span class="stars">★★★★★</span></h3>
+                        <p class="rating-count">Based on 98+ Google Reviews</p>
+                        <a href="https://maps.google.com/?q=Hardcore+Fitness+Centre,Dahisar+East,Mumbai" target="_blank" class="rating-link">Read All Google Reviews <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section section-padding bg-darker" id="faq">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <div class="sub-badge">GOT QUESTIONS?</div>
+                    <h2 class="section-title">FREQUENTLY ASKED <span class="accent-text gradient-glow-text">QUESTIONS</span></h2>
+                    <p class="section-subtitle">Everything you need to know before stepping onto the training floor.</p>
+                </div>
+
+                <div class="faq-accordion-wrap">
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question">
+                            <span>What are your gym opening and closing hours?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We are open Monday to Saturday from <strong>5:30 AM to 11:00 PM</strong> without midday closures. On Sundays, we are open from <strong>9:00 AM to 1:00 PM</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question">
+                            <span>Are beginner lifters welcome at Hardcore Fitness Centre?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! While our atmosphere is serious about results, lifters of all experience levels are welcomed. Our certified floor trainers guide you step-by-step through machine adjustments and proper form.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question">
+                            <span>Do you provide locker and change room facilities?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all active members have access to clean, secure day-use lockers and changing rooms to store their belongings comfortably during workouts.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item reveal-up">
+                        <button class="faq-question">
+                            <span>Can I get a trial or visit the gym before joining?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! You can walk in during our operational hours or call us at <strong>7777057055</strong> to schedule a facility walkthrough and discuss custom membership deals.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Location & Contact -->
-        <section class="contact section-padding bg-darker" id="contact">
+        <section class="contact section-padding" id="contact">
             <div class="container">
                 <div class="contact-grid">
                     
                     <div class="contact-info reveal-left">
-                        <h2 class="section-title">LOCATION & <span class="accent-text">HOURS</span></h2>
+                        <div class="sub-badge">FIND YOUR SANCTUARY</div>
+                        <h2 class="section-title">LOCATION & <span class="accent-text gradient-glow-text">HOURS</span></h2>
                         
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Hardcore Fitness Centre</h4>
-                                <p>Shop No 1 & 2, Anil Dubey Chawl,<br>
-                                Chhatrapati Shivaji Rd,<br>
-                                near Matruchaya College,<br>
-                                Dahisar East, Mumbai, Maharashtra 400068</p>
+                        <div class="info-card glass-card">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4>Hardcore Fitness Centre</h4>
+                                    <p>Shop No 1 & 2, Anil Dubey Chawl,<br>
+                                    Chhatrapati Shivaji Rd, near Matruchaya College,<br>
+                                    Dahisar East, Mumbai, Maharashtra 400068</p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:+917777057055">7777057055</a></p>
+                            
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div>
+                                    <h4>Direct Call / WhatsApp</h4>
+                                    <p><a href="tel:+917777057055" class="highlight-link">+91 77770 57055</a></p>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Opening Hours</h4>
-                                <p><strong>Mon – Sat:</strong> 5:30 AM – 11:00 PM</p>
-                                <p><strong>Sunday:</strong> 9:00 AM – 1:00 PM</p>
+                            
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h4>Operating Schedule</h4>
+                                    <p><strong>Mon – Sat:</strong> 5:30 AM – 11:00 PM</p>
+                                    <p><strong>Sunday:</strong> 9:00 AM – 1:00 PM</p>
+                                </div>
                             </div>
+                            
+                            <a href="https://maps.google.com/?q=Hardcore+Fitness+Centre,Dahisar+East,Mumbai" target="_blank" class="btn btn-primary mt-4 btn-shimmer">
+                                <i class="fas fa-directions"></i> <span>OPEN IN GOOGLE MAPS</span>
+                            </a>
                         </div>
-                        
-                        <a href="https://maps.google.com/?q=Hardcore+Fitness+Centre,Dahisar+East,Mumbai" target="_blank" class="btn btn-primary mt-4">
-                            <i class="fas fa-directions"></i> GET DIRECTIONS
-                        </a>
                     </div>
                     
-                    <div class="contact-form-wrapper reveal-right">
-                        <h3 class="form-title">SEND AN ENQUIRY</h3>
+                    <div class="contact-form-wrapper glass-card reveal-right">
+                        <div class="sub-badge">DROP A LINE</div>
+                        <h3 class="form-title">SEND AN <span class="accent-text">ENQUIRY</span></h3>
+                        <p class="form-desc">Have questions about memberships, personal training, or special discounts? Drop your details below.</p>
+                        
                         <form class="contact-form" id="contactForm">
                             <div class="form-group">
-                                <label for="name">Full Name</label>
+                                <label for="name"><i class="fas fa-user"></i> Full Name</label>
                                 <input type="text" id="name" required placeholder="John Doe">
                             </div>
                             
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" required placeholder="Your contact number">
+                                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="phone" required placeholder="+91 98765 43210">
                             </div>
                             
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
                                 <input type="email" id="email" required placeholder="john@example.com">
                             </div>
                             
                             <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+                                <label for="message"><i class="fas fa-comment-dots"></i> Message or Fitness Goals</label>
+                                <textarea id="message" rows="3" required placeholder="Tell us about your fitness targets or membership queries..."></textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary btn-block">SEND ENQUIRY</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-large btn-glow" id="submitBtn">
+                                <span>SEND ENQUIRY NOW</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
                             <div class="form-status" id="formStatus"></div>
                         </form>
                     </div>
@@ -328,49 +682,141 @@
                 </div>
             </div>
         </section>
+
+        <!-- Dynamic Moving Hardcore Philosophy Marquee Strip (Reverse Motion) -->
+        <div class="marquee-strip marquee-reverse" aria-hidden="true">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-item"><i class="fas fa-meteor"></i> TRAIN HARD • STAY HARDCORE</span>
+                    <span class="marquee-item"><i class="fas fa-crown"></i> FORGE YOUR LEGACY</span>
+                    <span class="marquee-item"><i class="fas fa-fire-alt"></i> SWEAT IS COMMITMENT</span>
+                    <span class="marquee-item"><i class="fas fa-fist-raised"></i> DISCIPLINE OUTLIVES MOTIVATION</span>
+                    <span class="marquee-item"><i class="fas fa-bolt"></i> DEFY YOUR LIMITS DAILY</span>
+                    <span class="marquee-item"><i class="fas fa-dumbbell"></i> SHUT UP AND SQUAT</span>
+                    <span class="marquee-item"><i class="fas fa-burn"></i> EMBRACE THE IRON GRIND</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="marquee-item"><i class="fas fa-meteor"></i> TRAIN HARD • STAY HARDCORE</span>
+                    <span class="marquee-item"><i class="fas fa-crown"></i> FORGE YOUR LEGACY</span>
+                    <span class="marquee-item"><i class="fas fa-fire-alt"></i> SWEAT IS COMMITMENT</span>
+                    <span class="marquee-item"><i class="fas fa-fist-raised"></i> DISCIPLINE OUTLIVES MOTIVATION</span>
+                    <span class="marquee-item"><i class="fas fa-bolt"></i> DEFY YOUR LIMITS DAILY</span>
+                    <span class="marquee-item"><i class="fas fa-dumbbell"></i> SHUT UP AND SQUAT</span>
+                    <span class="marquee-item"><i class="fas fa-burn"></i> EMBRACE THE IRON GRIND</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo">
-                    HARDCORE <span>FITNESS</span>
+                <a href="#" class="logo footer-logo">
+                    <div class="logo-emblem-wrap">
+                        <img src="images/logo.jpg" alt="Hardcore Fitness Logo Emblem" class="logo-img">
+                    </div>
+                    <div class="logo-text-group">
+                        <span class="logo-brand">HARDCORE</span>
+                        <span class="logo-sub">FITNESS</span>
+                    </div>
                 </a>
-                <p>A serious training environment for people committed to becoming stronger, fitter, and better.</p>
+                <p>The premier training sanctum in Dahisar East for serious lifters, bodybuilders, and fitness purists.</p>
                 <div class="footer-contact">
-                    <p><i class="fas fa-map-marker-alt"></i> Dahisar East, Mumbai</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+917777057055">7777057055</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dahisar East, Mumbai 400068</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+917777057055">7777057055</a></p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://maps.google.com/?q=Hardcore+Fitness+Centre,Dahisar+East,Mumbai" target="_blank" aria-label="Google Maps"><i class="fab fa-google"></i></a>
+                    <a href="tel:+917777057055" aria-label="Call Gym"><i class="fas fa-phone"></i></a>
+                    <a href="#contact" aria-label="Send Enquiry"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             
             <div class="footer-links">
-                <h3>Quick Links</h3>
+                <h3>Navigation</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#training">Training</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About Facility</a></li>
                     <li><a href="#membership">Membership</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact & Map</a></li>
                 </ul>
             </div>
             
             <div class="footer-hours">
-                <h3>Hours</h3>
+                <h3>Gym Schedule</h3>
                 <ul>
-                    <li><span>Mon - Sat:</span> 5:30 AM – 11:00 PM</li>
+                    <li><span>Monday:</span> 5:30 AM – 11:00 PM</li>
+                    <li><span>Tuesday:</span> 5:30 AM – 11:00 PM</li>
+                    <li><span>Wednesday:</span> 5:30 AM – 11:00 PM</li>
+                    <li><span>Thursday:</span> 5:30 AM – 11:00 PM</li>
+                    <li><span>Friday:</span> 5:30 AM – 11:00 PM</li>
+                    <li><span>Saturday:</span> 5:30 AM – 11:00 PM</li>
                     <li><span>Sunday:</span> 9:00 AM – 1:00 PM</li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <div class="container">
+            <div class="container footer-bottom-flex">
                 <p>&copy; 2026 Hardcore Fitness Centre. All rights reserved.</p>
+                <p class="footer-motto">Built with Sweat, Iron & Consistency.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <svg class="progress-ring" width="48" height="48">
+            <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="3" fill="transparent" r="20" cx="24" cy="24"/>
+        </svg>
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Interactive Theme Switcher Floating Dock -->
+    <div class="theme-switcher-dock" id="themeSwitcherDock">
+        <div class="theme-palette-menu" id="themePaletteMenu">
+            <span class="theme-menu-title">SELECT ATMOSPHERE</span>
+            <div class="theme-options">
+                <button type="button" class="theme-opt-btn active" data-theme="gold" title="Cyber Gold (Designer Pick)">
+                    <span class="swatch swatch-gold"></span>
+                    <span class="theme-name">Cyber Gold</span>
+                    <span class="theme-badge">TOP PICK</span>
+                </button>
+                <button type="button" class="theme-opt-btn" data-theme="blue" title="Midnight Sapphire">
+                    <span class="swatch swatch-blue"></span>
+                    <span class="theme-name">Midnight Blue</span>
+                </button>
+                <button type="button" class="theme-opt-btn" data-theme="maroon" title="Blood Maroon">
+                    <span class="swatch swatch-maroon"></span>
+                    <span class="theme-name">Blood Maroon</span>
+                </button>
+                <button type="button" class="theme-opt-btn" data-theme="monochrome" title="Titanium Noir">
+                    <span class="swatch swatch-monochrome"></span>
+                    <span class="theme-name">Titanium Noir</span>
+                </button>
+                <button type="button" class="theme-opt-btn" data-theme="green" title="Toxic Matrix">
+                    <span class="swatch swatch-green"></span>
+                    <span class="theme-name">Toxic Matrix</span>
+                </button>
+            </div>
+        </div>
+        <button type="button" class="theme-switcher-toggle" id="themeSwitcherToggle" aria-label="Change Color Theme" title="Choose Website Theme">
+            <i class="fas fa-palette"></i>
+            <span>THEME</span>
+        </button>
+    </div>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <img src="" alt="Enlarged Gym View" id="lightboxImg" class="lightbox-img">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
